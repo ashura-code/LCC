@@ -514,35 +514,33 @@
 
 <h1 id="legacy-java-system-documentation">Legacy Java System Documentation</h1>
 <h2 id="introduction">Introduction</h2>
-<p>This system provides a backend for managing tickets and comments. It allows users to create, update, and retrieve tickets, as well as create comments associated with tickets.</p>
+<p>This system provides a backend for managing tickets and their respective comments. It allows users to create, update, and retrieve tickets, as well as create comments for existing tickets.</p>
 <h2 id="architecture">Architecture</h2>
-<p>The system consists of two main domains: Ticket and Comment. The Ticket domain handles ticket creation, retrieval, and status updates, while the Comment domain handles comment creation. The system uses a RESTful API with JSON data format.</p>
+<p>The system consists of two main domains: Ticket and Comment. The Ticket domain handles ticket creation, retrieval, and status updates, while the Comment domain handles comment creation. The system uses a RESTful API to expose endpoints for these operations.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>Java runtime environment</li>
-<li>HTTP client or API testing tool</li>
-<li>JSON parsing library (if necessary)</li>
+<li>Java Runtime Environment (JRE) installed</li>
+<li>A compatible IDE or text editor for development</li>
+<li>A database management system for storing ticket and comment data</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <ul>
-<li>Clone the repository containing the system code</li>
-<li>Build the project using the provided build script</li>
-<li>Start the server using the provided run script</li>
+<li>Clone the repository to your local machine</li>
+<li>Install required dependencies using your preferred package manager</li>
+<li>Configure the database connection settings to match your environment</li>
 </ul>
 <h2 id="how-to-run">How To Run</h2>
 <ul>
-<li>Use a HTTP client or API testing tool to send requests to the server</li>
-<li>Send a GET request to /tickets to retrieve all tickets</li>
-<li>Send a POST request to /tickets with a JSON body containing title and description to create a new ticket</li>
-<li>Send a PUT request to /tickets/{id}/status with a query parameter status to update a ticket's status</li>
-<li>Send a POST request to /comments with a JSON body containing message and ticket to create a new comment</li>
+<li>Compile the Java code using the command 'javac'</li>
+<li>Run the application using the command 'java'</li>
+<li>Use a tool like Postman or cURL to test API endpoints</li>
 </ul>
 <h2 id="usage-examples">Usage Examples</h2>
 <ul>
 <li>Create a new ticket: POST /tickets with a JSON body containing title and description</li>
-<li>Get all tickets: GET /tickets</li>
 <li>Update a ticket's status: PUT /tickets/{id}/status with a query parameter status</li>
-<li>Create a new comment: POST /comments with a JSON body containing message and ticket</li>
+<li>Retrieve all tickets: GET /tickets</li>
+<li>Create a new comment: POST /comments with JSON body {"message": "Example comment", "ticket": {"id": 1}}</li>
 </ul>
 <h2 id="domains">Domains</h2>
 <ul>

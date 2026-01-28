@@ -7,7 +7,7 @@ router = APIRouter()
 service = TicketService()
 
 @router.get('/tickets')
-def get_all_tickets():
+def retrieve_all_tickets():
     return {'status': 'ok'}
 
 @router.post('/tickets')

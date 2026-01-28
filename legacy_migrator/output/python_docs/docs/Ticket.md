@@ -1,10 +1,10 @@
 # Ticket
 
 ## Overview
-A system for managing tickets with different statuses
+A system for managing tickets with their respective status
 
 ## API Routes
-- **GET** `/tickets` → `Get all tickets`
+- **GET** `/tickets` → `Retrieve all tickets`
 - **POST** `/tickets` → `Create a new ticket`
 - **PUT** `/tickets/{id}/status` → `Update the status of a ticket`
 

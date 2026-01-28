@@ -494,10 +494,10 @@
 
 <h1 id="ticket">Ticket</h1>
 <h2 id="overview">Overview</h2>
-<p>A system for managing tickets with different statuses</p>
+<p>A system for managing tickets with their respective status</p>
 <h2 id="api-endpoints">API Endpoints</h2>
 <ul>
-<li><strong>GET</strong> <code>/tickets</code> — Get all tickets</li>
+<li><strong>GET</strong> <code>/tickets</code> — Retrieve all tickets</li>
 <li><strong>POST</strong> <code>/tickets</code> — Create a new ticket</li>
 <li><strong>PUT</strong> <code>/tickets/{id}/status</code> — Update the status of a ticket</li>
 </ul>
@@ -521,8 +521,8 @@
 <h2 id="usage-examples">Usage Examples</h2>
 <ul>
 <li>Create a new ticket: POST /tickets with a JSON body containing title and description</li>
-<li>Get all tickets: GET /tickets</li>
 <li>Update a ticket's status: PUT /tickets/{id}/status with a query parameter status</li>
+<li>Retrieve all tickets: GET /tickets</li>
 </ul>
 
 
