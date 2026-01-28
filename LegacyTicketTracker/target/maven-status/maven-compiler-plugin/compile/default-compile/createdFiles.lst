@@ -1,0 +1,11 @@
+com/company/legacytickettracker/controller/CommentController.class
+com/company/legacytickettracker/model/Ticket.class
+com/company/legacytickettracker/model/Comment.class
+com/company/legacytickettracker/dto/TicketRequest.class
+com/company/legacytickettracker/model/TicketStatus.class
+com/company/legacytickettracker/service/CommentService.class
+com/company/legacytickettracker/repository/TicketRepository.class
+com/company/legacytickettracker/controller/TicketController.class
+com/company/legacytickettracker/repository/CommentRepository.class
+com/company/legacytickettracker/service/TicketService.class
+com/company/legacytickettracker/LegacyTicketTrackerApplication.class

@@ -1,0 +1,11 @@
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/dto/TicketRequest.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/repository/TicketRepository.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/service/CommentService.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/repository/CommentRepository.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/model/Comment.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/model/Ticket.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/controller/TicketController.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/controller/CommentController.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/service/TicketService.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/LegacyTicketTrackerApplication.java
+/Users/adhitya/Desktop/CodeConverter/LCC/LegacyTicketTracker/src/main/java/com/company/legacytickettracker/model/TicketStatus.java
