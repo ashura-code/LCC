@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Env
+.env
+
+# Generated docs
+output/**/site/
+output/**/search/
+output/**/search_index.json
+
+# OS
+.DS_Store
