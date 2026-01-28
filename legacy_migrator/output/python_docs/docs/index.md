@@ -1,33 +1,90 @@
 # Python FastAPI System Documentation
 
 ## Introduction
-This is a FastAPI backend for managing tickets and comments. It provides endpoints for creating, updating, and retrieving ticket information, as well as creating comments related to tickets.
+The ticket management system is designed to handle the creation, retrieval, and updating of tickets with different statuses. The system consists of two main domains: Ticket and Comment. The Ticket domain handles the management of tickets, including creating new tickets, retrieving all tickets, and updating the status of existing tickets. The Comment domain handles the creation of comments for tickets. The system uses a RESTful API architecture, with endpoints for creating, reading, and updating resources.
 
 ## Architecture
-The backend is divided into two domains: Ticket and Comment. The Ticket domain handles ticket-related operations, while the Comment domain handles comment-related operations. Both domains use services (TicketService and CommentService) to encapsulate business logic.
+The system uses a microservices architecture, with two main services: Ticket Service and Comment Service. The Ticket Service handles all operations related to tickets, including creating, retrieving, and updating tickets. The Comment Service handles the creation of comments for tickets. The services communicate with each other using RESTful APIs. The system uses FastAPI as the web framework, Pydantic for data validation, and Uvicorn as the ASGI server.
 
 ## Requirements
-- Python 3.8 or higher
-- FastAPI 0.92.0 or higher
-- Uvicorn 0.18.3 or higher
-- Pydantic 1.10.2 or higher
+- Python 3.10+
+- fastapi
+- uvicorn
+- pydantic
 
 ## Installation
-- Clone the repository using git clone
-- Install dependencies using pip install -r requirements.txt
-- Create a new virtual environment using python -m venv venv
-- Activate the virtual environment using source venv/bin/activate (on Linux/Mac) or venv\Scripts\activate (on Windows)
+- python -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt
 
 ## How To Run
-- Run the application using uvicorn main:app --host 0.0.0.0 --port 8000
-- Access the API documentation at http://localhost:8000/docs
-- Use a tool like curl or Postman to test the API endpoints
+- uvicorn main:app --reload
+- Open http://127.0.0.1:8000/docs
 
 ## Usage Examples
-- Create a new ticket: POST /tickets with JSON body {"title": "New Ticket", "description": "This is a new ticket"}
-- Get all tickets: GET /tickets
-- Update a ticket's status: PUT /tickets/{id}/status with JSON body {"status": "IN_PROGRESS"}
-- Create a new comment: POST /comments with JSON body {"message": "This is a new comment", "ticket_id": 1}
+- {
+  "method": "POST",
+  "path": "/tickets",
+  "description": "Create a new ticket",
+  "request_body": {
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "OPEN"
+  },
+  "response": {
+    "id": 1,
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "OPEN"
+  }
+}
+- {
+  "method": "GET",
+  "path": "/tickets",
+  "description": "Get all tickets",
+  "response": [
+    {
+      "id": 1,
+      "title": "Example Ticket",
+      "description": "This is an example ticket",
+      "status": "OPEN"
+    },
+    {
+      "id": 2,
+      "title": "Another Ticket",
+      "description": "This is another ticket",
+      "status": "IN_PROGRESS"
+    }
+  ]
+}
+- {
+  "method": "POST",
+  "path": "/comments",
+  "description": "Create a new comment",
+  "request_body": {
+    "message": "This is a comment",
+    "ticket": 1
+  },
+  "response": {
+    "id": 1,
+    "message": "This is a comment",
+    "ticket": 1
+  }
+}
+- {
+  "method": "PUT",
+  "path": "/tickets/1/status",
+  "description": "Update the status of a ticket",
+  "request_body": {
+    "status": "IN_PROGRESS"
+  },
+  "response": {
+    "id": 1,
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "IN_PROGRESS"
+  }
+}
 
 ## Domains
 - [Ticket](Ticket.md)

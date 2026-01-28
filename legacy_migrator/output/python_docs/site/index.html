@@ -514,35 +514,92 @@
 
 <h1 id="python-fastapi-system-documentation">Python FastAPI System Documentation</h1>
 <h2 id="introduction">Introduction</h2>
-<p>This is a FastAPI backend for managing tickets and comments. It provides endpoints for creating, updating, and retrieving ticket information, as well as creating comments related to tickets.</p>
+<p>The ticket management system is designed to handle the creation, retrieval, and updating of tickets with different statuses. The system consists of two main domains: Ticket and Comment. The Ticket domain handles the management of tickets, including creating new tickets, retrieving all tickets, and updating the status of existing tickets. The Comment domain handles the creation of comments for tickets. The system uses a RESTful API architecture, with endpoints for creating, reading, and updating resources.</p>
 <h2 id="architecture">Architecture</h2>
-<p>The backend is divided into two domains: Ticket and Comment. The Ticket domain handles ticket-related operations, while the Comment domain handles comment-related operations. Both domains use services (TicketService and CommentService) to encapsulate business logic.</p>
+<p>The system uses a microservices architecture, with two main services: Ticket Service and Comment Service. The Ticket Service handles all operations related to tickets, including creating, retrieving, and updating tickets. The Comment Service handles the creation of comments for tickets. The services communicate with each other using RESTful APIs. The system uses FastAPI as the web framework, Pydantic for data validation, and Uvicorn as the ASGI server.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>Python 3.8 or higher</li>
-<li>FastAPI 0.92.0 or higher</li>
-<li>Uvicorn 0.18.3 or higher</li>
-<li>Pydantic 1.10.2 or higher</li>
+<li>Python 3.10+</li>
+<li>fastapi</li>
+<li>uvicorn</li>
+<li>pydantic</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <ul>
-<li>Clone the repository using git clone</li>
-<li>Install dependencies using pip install -r requirements.txt</li>
-<li>Create a new virtual environment using python -m venv venv</li>
-<li>Activate the virtual environment using source venv/bin/activate (on Linux/Mac) or venv\Scripts\activate (on Windows)</li>
+<li>python -m venv venv</li>
+<li>source venv/bin/activate</li>
+<li>pip install -r requirements.txt</li>
 </ul>
 <h2 id="how-to-run">How To Run</h2>
 <ul>
-<li>Run the application using uvicorn main:app --host 0.0.0.0 --port 8000</li>
-<li>Access the API documentation at http://localhost:8000/docs</li>
-<li>Use a tool like curl or Postman to test the API endpoints</li>
+<li>uvicorn main:app --reload</li>
+<li>Open http://127.0.0.1:8000/docs</li>
 </ul>
 <h2 id="usage-examples">Usage Examples</h2>
 <ul>
-<li>Create a new ticket: POST /tickets with JSON body {"title": "New Ticket", "description": "This is a new ticket"}</li>
-<li>Get all tickets: GET /tickets</li>
-<li>Update a ticket's status: PUT /tickets/{id}/status with JSON body {"status": "IN_PROGRESS"}</li>
-<li>Create a new comment: POST /comments with JSON body {"message": "This is a new comment", "ticket_id": 1}</li>
+<li>{
+  "method": "POST",
+  "path": "/tickets",
+  "description": "Create a new ticket",
+  "request_body": {
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "OPEN"
+  },
+  "response": {
+    "id": 1,
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "OPEN"
+  }
+}</li>
+<li>{
+  "method": "GET",
+  "path": "/tickets",
+  "description": "Get all tickets",
+  "response": [
+    {
+      "id": 1,
+      "title": "Example Ticket",
+      "description": "This is an example ticket",
+      "status": "OPEN"
+    },
+    {
+      "id": 2,
+      "title": "Another Ticket",
+      "description": "This is another ticket",
+      "status": "IN_PROGRESS"
+    }
+  ]
+}</li>
+<li>{
+  "method": "POST",
+  "path": "/comments",
+  "description": "Create a new comment",
+  "request_body": {
+    "message": "This is a comment",
+    "ticket": 1
+  },
+  "response": {
+    "id": 1,
+    "message": "This is a comment",
+    "ticket": 1
+  }
+}</li>
+<li>{
+  "method": "PUT",
+  "path": "/tickets/1/status",
+  "description": "Update the status of a ticket",
+  "request_body": {
+    "status": "IN_PROGRESS"
+  },
+  "response": {
+    "id": 1,
+    "title": "Example Ticket",
+    "description": "This is an example ticket",
+    "status": "IN_PROGRESS"
+  }
+}</li>
 </ul>
 <h2 id="domains">Domains</h2>
 <ul>

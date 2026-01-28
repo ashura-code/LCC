@@ -494,33 +494,35 @@
 
 <h1 id="ticket">Ticket</h1>
 <h2 id="overview">Overview</h2>
-<p>A system for managing and tracking tickets, including creating, updating, and retrieving ticket information.</p>
+<p>A system for managing tickets with different statuses</p>
 <h2 id="api-endpoints">API Endpoints</h2>
 <ul>
-<li><strong>GET</strong> <code>/tickets</code> — Retrieve a list of all tickets.</li>
-<li><strong>POST</strong> <code>/tickets</code> — Create a new ticket.</li>
-<li><strong>PUT</strong> <code>/tickets/{id}/status</code> — Update the status of a ticket with the given ID.</li>
+<li><strong>GET</strong> <code>/tickets</code> — Get all tickets</li>
+<li><strong>POST</strong> <code>/tickets</code> — Create a new ticket</li>
+<li><strong>PUT</strong> <code>/tickets/{id}/status</code> — Update the status of a ticket</li>
 </ul>
 <h2 id="entities">Entities</h2>
 <ul>
 <li><strong>Ticket</strong>: id, title, description, status</li>
-<li><strong>TicketStatus</strong>: OPEN, IN_PROGRESS, CLOSED</li>
+<li><strong>Comment</strong>: id, text, ticketId</li>
 </ul>
 <h2 id="enums">Enums</h2>
 <ul>
-<li>TicketStatus</li>
+<li>OPEN</li>
+<li>IN_PROGRESS</li>
+<li>CLOSED</li>
 </ul>
 <h2 id="business-logic">Business Logic</h2>
 <ul>
-<li>Tickets can be created with a title, description, and initial status.</li>
-<li>Tickets can be updated to change their status.</li>
-<li>Tickets can be retrieved by ID or in a list of all tickets.</li>
+<li>A ticket can be created with a title, description, and initial status</li>
+<li>A ticket's status can be updated</li>
+<li>All tickets can be retrieved</li>
 </ul>
 <h2 id="usage-examples">Usage Examples</h2>
 <ul>
-<li>Create a new ticket: POST /tickets with a JSON body containing title and description.</li>
-<li>Update the status of a ticket: PUT /tickets/{id}/status with a query parameter status.</li>
-<li>Retrieve a list of all tickets: GET /tickets</li>
+<li>Create a new ticket: POST /tickets with a JSON body containing title and description</li>
+<li>Get all tickets: GET /tickets</li>
+<li>Update a ticket's status: PUT /tickets/{id}/status with a query parameter status</li>
 </ul>
 
 

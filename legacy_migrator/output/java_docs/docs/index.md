@@ -1,37 +1,33 @@
 # Legacy Java System Documentation
 
-<<<<<<< Updated upstream
-## System Overview
-Legacy Spring Boot Ticket Tracking system handling tickets and comments.
-=======
 ## Introduction
-The backend system is designed to manage and track tickets, including creating, updating, and retrieving ticket information, as well as creating and managing comments related to tickets.
+This system provides a backend for managing tickets and comments. It allows users to create, update, and retrieve tickets, as well as create comments associated with tickets.
 
 ## Architecture
-The system consists of two main domains: Ticket and Comment. The Ticket domain handles ticket creation, update, and retrieval, while the Comment domain handles comment creation and management. The system uses RESTful API endpoints to interact with the domains.
+The system consists of two main domains: Ticket and Comment. The Ticket domain handles ticket creation, retrieval, and status updates, while the Comment domain handles comment creation. The system uses a RESTful API with JSON data format.
 
 ## Requirements
-- Java Runtime Environment (JRE) installed
-- API endpoint URLs and authentication credentials
-- JSON body format for API requests
+- Java runtime environment
+- HTTP client or API testing tool
+- JSON parsing library (if necessary)
 
 ## Installation
-- Clone the repository from the version control system
-- Build the project using the build tool (e.g. Maven or Gradle)
-- Deploy the application to a server or cloud platform
+- Clone the repository containing the system code
+- Build the project using the provided build script
+- Start the server using the provided run script
 
 ## How To Run
-- Start the application server
-- Use a tool like Postman or cURL to send HTTP requests to the API endpoints
-- Authenticate with the API using the provided credentials
+- Use a HTTP client or API testing tool to send requests to the server
+- Send a GET request to /tickets to retrieve all tickets
+- Send a POST request to /tickets with a JSON body containing title and description to create a new ticket
+- Send a PUT request to /tickets/{id}/status with a query parameter status to update a ticket's status
+- Send a POST request to /comments with a JSON body containing message and ticket to create a new comment
 
 ## Usage Examples
 - Create a new ticket: POST /tickets with a JSON body containing title and description
-- Update the status of a ticket: PUT /tickets/{id}/status with a query parameter status
-- Retrieve all tickets: GET /tickets
-- Create a new comment: POST /comments with a JSON body containing the comment message and ticket id
-- Example JSON body for comment creation: {"message": "This is a comment", "ticket": {"id": 1}}
->>>>>>> Stashed changes
+- Get all tickets: GET /tickets
+- Update a ticket's status: PUT /tickets/{id}/status with a query parameter status
+- Create a new comment: POST /comments with a JSON body containing message and ticket
 
 ## Domains
 - [Ticket](Ticket.md)

@@ -470,15 +470,14 @@
 
 <h1 id="comment">Comment</h1>
 <h2 id="overview">Overview</h2>
-<p>The comment management domain is responsible for creating and managing comments related to tickets.</p>
+<p>Handles creation of comments for tickets</p>
 <h2 id="api-endpoints">API Endpoints</h2>
 <ul>
-<li><strong>POST</strong> <code>/comments</code> — Create a new comment</li>
+<li><strong>POST</strong> <code>/comments</code> — Creates a new comment</li>
 </ul>
 <h2 id="entities">Entities</h2>
 <ul>
 <li><strong>Comment</strong>: id, message, ticket</li>
-<li><strong>Ticket</strong>: id</li>
 </ul>
 <h2 id="business-logic">Business Logic</h2>
 <ul>
@@ -486,8 +485,7 @@
 </ul>
 <h2 id="usage-examples">Usage Examples</h2>
 <ul>
-<li>Create a new comment: POST /comments with a JSON body containing the comment message and ticket id</li>
-<li>Example JSON body: {"message": "This is a comment", "ticket": {"id": 1}}</li>
+<li>Create a new comment: POST /comments with JSON body {"message": "Example comment", "ticket": {"id": 1}}</li>
 </ul>
 
 
