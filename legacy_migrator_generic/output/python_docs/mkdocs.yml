@@ -1,0 +1,9 @@
+site_name: Python FastAPI Documentation
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Ticket: Ticket.md
+  - Comment: Comment.md

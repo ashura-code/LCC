@@ -1,0 +1,9 @@
+site_name: Legacy Java Documentation
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Ticket: Ticket.md
+  - Comment: Comment.md
